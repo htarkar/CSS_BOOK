@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        background-color: rgb(41, 39, 39);
+    }
+   .container {
+       position: relative;
+       width: 200px;
+      height: 300px;
+      background-color: rgb(75, 72, 72);
+      transform: rotate(-45deg) skewX(10deg) scale(.9);
+      border-left: 25px solid rebeccapurple;
+      color: #fff;
+      text-align: justify;
+      font-size: 9.6px;
+      padding: 10px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      transition : transform .3s,box-shadow .3s;
+      box-shadow: -50px 50px 40px 10px rgba(0,0,0,.5);
+   }
+   .container:hover {
+      transform: rotate(-45deg) skewX(10deg) scale(.9) translate(30px,-35px);
+      box-shadow: -80px 80px 40px 10px rgba(0,0,0,.9);
+   }
+   /* .container:hover {
+      transform: rotate(0deg) skewX(0deg) scale(1.3) ;
+   } */
+   .container > h2 {
+       opacity: .9;
+       font-size: 1.2em;
+       margin-bottom: 6px;
+   }
+   .container > p {
+       opacity: .8;
+   }
+   .container:before {
+       position: absolute;
+       content: '';
+       top: 0;
+       left: 0;
+       width: 25px ;
+       height: 100%;
+       background-color: rebeccapurple;
+       transform: translate(-50px,12px) skewY(-45deg);
+   }
+   .container::after {
+       position: absolute;
+       content: '';
+       bottom: 0;
+       left: 0;
+       width: 114% ;
+       height: 25px;
+       background-color: rgb(125, 122, 129);
+       transform:skewX(-45deg) translate(-12.8px,25px) ;
+   }
+   .btn_container {
+       position: relative;
+       width:400px;
+       height: 160px;
+       display: flex;
+       flex-wrap: wrap;
+       border: 1px solid #242222;
+       align-items: center;
+       padding-left: 50px;
+       box-shadow: 0 0 10px 0 rgba(0,0,0,.3);
+   }
+   .btn_container::before {
+      position: absolute;
+      content: '';
+      top: 0;
+      left: 0;
+      width: 20px;
+      height: 100%;
+       border-left: 15px solid rebeccapurple;
+   }
+   .btn_container > h2 {
+       flex: 100%;
+       color: #fff;
+       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   }
+   .btn_container > .color_box {
+       width: 50px;
+       height: 50px;
+       background-color: #7a7676;
+       border-radius: 50%;
+       margin: -30px 15px 0 0;
+       opacity: .6;
+       border: none;
+       outline: none;
+   }
+   .btn_container > .color_box:hover {
+       opacity: 1;
+   }
+   .btn_container > .color_box.box1 {
+       background-color: red;
+   }
+   .btn_container > .color_box.box2 {
+       background-color: yellow;
+   }
+   .btn_container > .color_box.box3 {
+       background-color: green;
+   }
+   .btn_container > .color_box.box4 {
+       background-color: blue;
+   }
+   .btn_container > .color_box.box5 {
+       background-color: lightblue;
+   }
+</style>
+</head>
+<body>
+    <div class="container">
+        <h2>Heading</h2>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit, eius modi nostrum ex animi eum nemo cum odio facilis assumenda iure, quo repellendus ea soluta quis eaque sint eligendi veritatis.</p>
+        <br>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit, eius modi nostrum ex animi eum nemo cum odio facilis assumenda iure, quo repellendus ea soluta quis eaque sint eligendi veritatis.</p>
+        <hr style = "margin: 12px 0 4px 0;">
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit, eius modi nostrum ex animi eum nemo cum odio facilis assumenda iure, quo repellendus ea soluta quis eaque sint eligendi veritatis.</p>
+
+    </div>
+    <div class="btn_container">
+        <h2>Change Color</h2>
+        <button class="color_box box1" onclick = "myfun1()"></button>
+        <button class="color_box box2" onclick = "myfun2()"></button>
+        <button class="color_box box3" onclick = "myfun3()"></button>
+        <button class="color_box box4" onclick = "myfun4()"></button>
+        <button class="color_box box5" onclick = "myfun5()"></button>
+    </div>
+  <!-- javascript -->
+  <script>
+      function myfun1() {
+          document.getElementsByClassName('container')[0].style.color = 'red';                
+      }
+      function myfun2() {
+          document.getElementsByClassName('container')[0].style.color = 'yellow';                
+      }
+      function myfun3() {
+          document.getElementsByClassName('container')[0].style.color = 'green';                
+      }
+      function myfun4() {
+          document.getElementsByClassName('container')[0].style.color = 'blue';                
+      }
+      function myfun5() {
+          document.getElementsByClassName('container')[0].style.color = 'lightblue';                
+      }
+  </script>
+</body>
+</html>
